@@ -1,0 +1,33 @@
+---
+layout: default
+title:  --r --d --f ~ [blog]
+---
+<div id="category">
+  {% if page.tags %}
+    <h3>Tag[<span class="tag">{{page.tags}}</span>]</h3>
+  {% endif %}
+  
+  <div class="posts">
+  {% for post in paginator.posts %}
+    <h2 class="post"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <span class="meta">{{ post.date | date_to_string }}</span> 
+    {% assign tags = post.tags %}
+    {% for tag in tags %}
+      <span style="font-size:1.3em;">
+        <a href="/tags/{{tag}}"><span>{{ tag }}</span></a>
+      </span>
+    {% endfor %}
+    <div class="post-content">
+      {{ post.summary }} 
+      <br/>
+      <a class="more" href="{{ post.url }}">More>></a>
+    </div>
+  {% endfor %} 
+  </div>
+</div>
+
+{% if page.tags %}
+  {% include paginate_tags.html %}
+{% else %}
+  {% include paginate.html%}
+{% endif %}

@@ -1,0 +1,72 @@
+body{
+  margin: 10px 6% 0 12%;
+  width: 80%;
+  border: none;
+}
+.jumbotron {
+  margin-bottom: 10px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px; 
+  background-color: white;
+}
+div.row div.content {
+  background-color: white;
+}
+div.colors {
+  background-color: #FF9640;
+  color: #A64B00;
+}
+div#category, div#tag-cloud{
+  border: none;
+}
+div#category h3, div#tag-cloud h3 {
+  margin-left: 10px;
+}
+nav {
+  border-bottom: 1px solid #009999 !important;
+  border-top: 1px solid #009999 !important;
+}
+nav, nav div {
+  background-color: white;
+  font-size: 1.0em;
+}
+.post  {
+  color : #FF9640;
+}
+.tag {
+  color : #FF9640;
+}
+.footer {
+  border-top: 1px solid #009999;
+  text-align: center;
+}
+div.footer span {
+  border-bottom: 1px solid black;
+}
+span.border-line {
+  border-bottom: 1px solid #A64B00;
+}
+span.meta {
+  color: gray !important;
+  font-size: 0.7em;
+}
+ul.posts li span {
+  color: gray !important;
+  font-size: 0.7em;
+}
+div.post-content {
+  margin-top: 30px;
+}
+div.post-content a.more {
+  color:  #FF9640;
+}
+div.center {
+  text-align: center;
+}
+#ul-nav {
+  height: 54px;
+}
+p.about {
+  font-size: 1.3em;
+}

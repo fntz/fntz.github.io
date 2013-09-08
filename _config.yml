@@ -1,0 +1,4 @@
+name: --r --d --f ~ 
+markdown: redcarpet
+pygments: true
+paginate: 10

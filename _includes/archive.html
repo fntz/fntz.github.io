@@ -1,0 +1,19 @@
+<div id="category">
+  <h3><span class="border-line">Archive</span></h3>
+  <ul class="posts">
+      {% for post in site.posts %}
+        <li>
+          <span class="meta">{{ post.date | date_to_string }}</span> 
+          <a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% assign tags = post.tags %}
+          {% for tag in tags %}
+            <span style="font-size:1.3em;">
+              <a href="/tags/{{tag}}"><span>{{ tag }}</span></a>
+            </span>
+          {% endfor %}
+          <div id="post-content">
+            {{post.summary}}
+          </div>
+      {% endfor %}
+  </ul>
+</div>

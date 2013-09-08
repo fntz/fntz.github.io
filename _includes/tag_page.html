@@ -1,0 +1,9 @@
+<div id="tag-cloud">
+  <h3><span class="border-line">Tags</span></h3>
+  {% assign tags = site.tags | tag_cloud_build %}
+  {% for tag in tags %}
+    <span class="tag" style="font-size: {{tag.last}}em;">
+      {{ tag.first }}
+    </span>
+  {% endfor %}
+</div>
