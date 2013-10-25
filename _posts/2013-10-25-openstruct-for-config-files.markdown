@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Read Config with OpenStruct"
+title:  "OpenStruct for Config files"
 date:   2013-10-15 16:00:00
 categories: ruby
 tags: ruby openstruct config snippet
-summary: "Reading config files with OpenStruct class" 
+summary: "Usage `OpenStruct` class for mapping config files." 
 ---
 
 
