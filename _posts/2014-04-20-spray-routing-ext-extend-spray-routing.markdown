@@ -8,7 +8,7 @@ tags: scala spray spray-routing rails-routing
 summary: "spray-routing-ext package for create rails like routes in spray" 
 ---
 
-1. Into
+1. Intro
 --------
 
 spray is a toolkit for create http application top on akka. It's an actor-based, lightweight, modular framework. Spray contains several modules. 
