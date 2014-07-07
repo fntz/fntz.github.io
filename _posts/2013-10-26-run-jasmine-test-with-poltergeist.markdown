@@ -3,6 +3,7 @@ layout: post
 title:  "Run Jasmine tests with Poltergeist"
 date:   2013-10-26 16:00:00
 categories: tests
+comments: true
 tags: poltergeist jasmine tests
 summary: "Sometimes comfortable viewing results of tests in terminal. With poltergeist driver it easy." 
 ---
@@ -131,4 +132,3 @@ References
 +   [Nokogiri](http://nokogiri.org/)
 +   [Rake](http://rake.rubyforge.org/)
 +   [Colorize gem](https://github.com/fazibear/colorize)
-

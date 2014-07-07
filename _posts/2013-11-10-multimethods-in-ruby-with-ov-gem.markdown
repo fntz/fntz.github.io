@@ -3,6 +3,7 @@ layout: post
 title:  "Multimethods in Ruby with Ov gem"
 date:   2013-11-10 19:54:00
 categories: ruby 
+comments: true
 tags: ruby multimethods ov
 summary: "Create multimethods with Ov for comfortable work." 
 ---
@@ -125,3 +126,4 @@ References
 + [Function_overloading](http://en.wikipedia.org/wiki/Function_overloading)
 + [Polymorphism](http://en.wikipedia.org/wiki/Polymorphism_(computer_science))
 + [Ov gem](https://github.com/fntzr/ov)
+

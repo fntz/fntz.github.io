@@ -2,6 +2,7 @@
 layout: post
 title:  "OpenStruct for Config files"
 date:   2013-10-15 16:00:00
+comments: true
 categories: ruby
 tags: ruby openstruct config snippet
 summary: "Usage `OpenStruct` class for mapping config files." 
@@ -76,3 +77,4 @@ References
 ------------
 
 +   [OpenStruct](http://www.ruby-doc.org/stdlib-2.0.0/libdoc/ostruct/rdoc/OpenStruct.html)
+

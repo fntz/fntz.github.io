@@ -127,20 +127,20 @@ Some examples of usage:
 
 ```scala
 
-  @wrap def m(s: String): Option[Int] = s match {
+  @wrap def method(s: String): Option[Int] = s match {
     case x if x == "1" => 1
     case x if x == "2" => 2
   }
 
-  println(m("1")) // => Some(1)
-  println(m("2")) // => Some(2)
-  println(m("3")) // => None
+  println(method("1")) // => Some(1)
+  println(method("2")) // => Some(2)
+  println(method("3")) // => None
 
-  @wrap val z = List(2) match {
+  @wrap val myVal = List(2) match {
     case x::xs if x == 1 => x
     case _ => None
   }
-  println(z) // => None
+  println(myVal) // => None
 
   @wrap def k = 1 // Error!
 ```
@@ -153,6 +153,6 @@ References
 + [Annotations](http://docs.scala-lang.org/overviews/macros/annotations.html)
 + [Quasiquotes Syntax](http://docs.scala-lang.org/overviews/quasiquotes/syntax-summary.html)
 + [Macros](http://docs.scala-lang.org/overviews/macros/usecases.html)
-
++ [Source code](https://gist.github.com/fntzr/9350393a786385733e8a)
 
 
