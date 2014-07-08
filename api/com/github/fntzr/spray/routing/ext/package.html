@@ -84,6 +84,20 @@
       </span>
       </h4>
       <p class="comment cmt">Provides implicits for String and spray.</p>
+    </li><li name="com.github.fntzr.spray.routing.ext.HttpFormSupport" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="HttpFormSupportextendsAnyRef"></a>
+      <a id="HttpFormSupport:HttpFormSupport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="HttpFormSupport.html"><span class="name">HttpFormSupport</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base trait, which add form to model serialization
+</p>
     </li><li name="com.github.fntzr.spray.routing.ext.HttpHelpers" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="HttpHelpersextendsAnyRef"></a>
       <a id="HttpHelpers:HttpHelpers"></a>
@@ -109,9 +123,22 @@
         <a href="HttpMethods.html"><span class="name">HttpMethods</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <p class="comment cmt">Trait containt http methods realisation</p>
+      <p class="comment cmt">Trait contain http methods realisation</p>
+    </li><li name="com.github.fntzr.spray.routing.ext.RespondToSupport" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RespondToSupportextendsAnyRef"></a>
+      <a id="RespondToSupport:RespondToSupport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="RespondToSupport.html"><span class="name">RespondToSupport</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
     </li><li name="com.github.fntzr.spray.routing.ext.Routable" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="RoutableextendsHttpServicewithHttpMethodswithHttpHelperswithHelpers"></a>
+      <a id="RoutableextendsHttpServicewithHttpMethodswithHttpHelperswithHelperswithHttpFormSupport"></a>
       <a id="Routable:Routable"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -119,7 +146,7 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Routable.html"><span class="name">Routable</span></a><span class="result"> extends <span class="extype" name="spray.routing.HttpService">HttpService</span> with <a href="HttpMethods.html" class="extype" name="com.github.fntzr.spray.routing.ext.HttpMethods">HttpMethods</a> with <a href="HttpHelpers.html" class="extype" name="com.github.fntzr.spray.routing.ext.HttpHelpers">HttpHelpers</a> with <a href="Helpers.html" class="extype" name="com.github.fntzr.spray.routing.ext.Helpers">Helpers</a></span>
+        <a href="Routable.html"><span class="name">Routable</span></a><span class="result"> extends <span class="extype" name="spray.routing.HttpService">HttpService</span> with <a href="HttpMethods.html" class="extype" name="com.github.fntzr.spray.routing.ext.HttpMethods">HttpMethods</a> with <a href="HttpHelpers.html" class="extype" name="com.github.fntzr.spray.routing.ext.HttpHelpers">HttpHelpers</a> with <a href="Helpers.html" class="extype" name="com.github.fntzr.spray.routing.ext.Helpers">Helpers</a> with <a href="HttpFormSupport.html" class="extype" name="com.github.fntzr.spray.routing.ext.HttpFormSupport">HttpFormSupport</a></span>
       </span>
       </h4>
       <p class="comment cmt">Trait contatin methods for resourse implementation.</p>
@@ -130,60 +157,7 @@
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="com.github.fntzr.spray.routing.ext.HelpersImpl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="HelpersImpl"></a>
-      <a id="HelpersImpl:HelpersImpl"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="HelpersImpl$.html"><span class="name">HelpersImpl</span></a>
-      </span>
-      </h4>
-      <p class="comment cmt"> Containt macros for <a href="Helpers.html" class="extype" name="com.github.fntzr.spray.routing.ext.Helpers">spray.routing.ext.Helpers</a>
-</p>
-    </li><li name="com.github.fntzr.spray.routing.ext.HttpHelpersImpl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="HttpHelpersImpl"></a>
-      <a id="HttpHelpersImpl:HttpHelpersImpl"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="HttpHelpersImpl$.html"><span class="name">HttpHelpersImpl</span></a>
-      </span>
-      </h4>
-      <p class="comment cmt">Object with macro implementation for <a href="HttpHelpers.html" class="extype" name="com.github.fntzr.spray.routing.ext.HttpHelpers">spray.routing.ext.HttpHelpers</a></p>
-    </li><li name="com.github.fntzr.spray.routing.ext.HttpMethodsImpl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="HttpMethodsImpl"></a>
-      <a id="HttpMethodsImpl:HttpMethodsImpl"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="HttpMethodsImpl$.html"><span class="name">HttpMethodsImpl</span></a>
-      </span>
-      </h4>
-      <p class="comment cmt">Object with http methods implementation.</p>
-    </li><li name="com.github.fntzr.spray.routing.ext.RoutableImpl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="RoutableImpl"></a>
-      <a id="RoutableImpl:RoutableImpl"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="RoutableImpl$.html"><span class="name">RoutableImpl</span></a>
-      </span>
-      </h4>
-      <p class="comment cmt">Object, which contatain resourse implementation.</p>
-    </li><li name="com.github.fntzr.spray.routing.ext.exclude" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="com.github.fntzr.spray.routing.ext.exclude" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="exclude"></a>
       <a id="exclude:exclude"></a>
       <h4 class="signature">
