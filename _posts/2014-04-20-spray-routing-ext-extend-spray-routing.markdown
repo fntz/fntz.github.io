@@ -283,11 +283,25 @@ trait PostController extends BaseController with DBInj with HtmlViewInj {
   implicit val timeout = Timeout(3 seconds)
 
   def index = {
-    val posts = Await.result(db ? Index, timeout.duration).asInstanceOf[HashMap[Int, Post]]
-    respond(render.indexView(posts))
+    respond {
+      (db ? Index).mapTo[HashMap[Int, Post]].map { posts =>
+        render.indexView(posts)
+      }
+    }
+  }
+
+  def show(id: Int) = {
+    respond {
+      (db ? Show(id)).mapTo[Option[Post]].map { post =>
+        render.showView(post)
+      }
+    }
   }
 
   //other methods
+
+  //where respond is 
+  def respond(t: ToResponseMarshallable) = respondWithMediaType(`text/html`) & complete(t)
 }
 
 ```
@@ -324,11 +338,6 @@ trait ApplicationRouteService extends Routable {
 Now, i exclude `create` method and define himself, because in form, i not use a `id` field. And i define that `/` is a redirect in `index` method from `PostController`.
 
 That's all. I created a blog in five minutes.
-
-4. TODO:
----------
-
-* create method for form extraction: postForm\[Controller, Model\]("route" ~> "method")
 
 
 References
