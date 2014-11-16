@@ -45,7 +45,7 @@ spray-routing dsl:
 in rails the same:
 
 ```ruby
-  resourses :models
+  resources :models
 ```
 
 Spray dsl more verbose.
@@ -84,10 +84,10 @@ If you want a call controller method for several http-methods, use `match0`:
 
 And now, `#baz` can call for `get` and `put` http methods.
 
-When we create a web servises, we should return something information, it's a posts, comments, or something like this. It a database Model. For work with `controller`s and `model`s we can use `resourse`. 
+When we create a web servises, we should return something information, it's a posts, comments, or something like this. It a database Model. For work with `controller`s and `model`s we can use `resource`. 
 
 ```scala
-resourse[YouCotnroller, Model](exclude("index"))
+resource[YouCotnroller, Model](exclude("index"))
 ```
 
 And now, all requests with `/model/` will be redirected for `YouController` methods: `index`, `show`, `delete`, `update`, `create`, `edit` and `fresh`.
@@ -110,7 +110,7 @@ With `spray-routing-ext` we divide dsl for routing: `get0`, `match0`, `root`. Fo
 
 Also in controller you have access `request` - current request.
 
-But if our controllers it only traits, how me pass into trait db connection, or other resourses, variables. I create the next solution:
+But if our controllers it only traits, how me pass into trait db connection, or other resources, variables. I create the next solution:
 
 
 ```scala
@@ -328,7 +328,7 @@ trait ApplicationRouteService extends Routable {
   //db connection
   //and view
   def route(db: ActorRef, render: HtmlView) =  {
-    resourse[PostController, Post](exclude("create"), {
+    resource[PostController, Post](exclude("create"), {
       post0[PostController]("create")
     }) ~ root[PostController]("index")
   }

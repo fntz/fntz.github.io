@@ -39,8 +39,8 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait contatin methods for resourse implementation.
- With resourse method you might quick create routes for you controller. Also map form information onto Model.</p><pre>resourse[Controller, Model]</pre><p>  transform to</p><pre>pathPrefix(<span class="lit">"model"</span>) {
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Trait contatin methods for resource implementation.
+ With resource method you might quick create routes for you controller. Also map form information onto Model.</p><pre>resource[Controller, Model]</pre><p>  transform to</p><pre>pathPrefix(<span class="lit">"model"</span>) {
 <span class="cmt">//methods for controller.index</span>
 <span class="cmt">// controller.show</span>
 <span class="cmt">// ...</span>
@@ -2475,19 +2475,19 @@ put {
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MiscDirectives</dd></dl></div>
-    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resourse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="resourse[C,M](exclude:List[String],block:spray.routing.RequestContext=&gt;Unit,sub:spray.routing.PathMatcher1[_]):spray.routing.RequestContext=&gt;Unit"></a>
-      <a id="resourse[C,M](List[String],(RequestContext)⇒Unit,PathMatcher1[_]):(RequestContext)⇒Unit"></a>
+    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resource" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resource[C,M](exclude:List[String],block:spray.routing.RequestContext=&gt;Unit,sub:spray.routing.PathMatcher1[_]):spray.routing.RequestContext=&gt;Unit"></a>
+      <a id="resource[C,M](List[String],(RequestContext)⇒Unit,PathMatcher1[_]):(RequestContext)⇒Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">resourse</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="exclude">exclude: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="block">block: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>, <span name="sub">sub: <span class="extype" name="spray.routing.PathMatcher1">PathMatcher1</span>[_]</span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">resource</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="exclude">exclude: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="block">block: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>, <span name="sub">sub: <span class="extype" name="spray.routing.PathMatcher1">PathMatcher1</span>[_]</span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Define resourse with subroute, block and excluded methods.</p><div class="fullcomment"><div class="comment cmt"><p>Define resourse with subroute, block and excluded methods.</p><pre>resourse[Controller, Method](exclude(<span class="lit">"show"</span>), {
+      <p class="shortcomment cmt">Define resource with subroute, block and excluded methods.</p><div class="fullcomment"><div class="comment cmt"><p>Define resource with subroute, block and excluded methods.</p><pre>resource[Controller, Method](exclude(<span class="lit">"show"</span>), {
   pathPrefix(<span class="lit">"/path"</span>) {
     complete{ <span class="lit">"path"</span> }
   }
@@ -2496,23 +2496,23 @@ IntNumber)</pre></div><dl class="paramcmts block"><dt class="tparam">C</dt><dd c
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@macroImpl</span><span class="args">(<span>
       
-      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resourse7Impl&quot;, &quot;signature&quot; = List(-1, -1, -1, -1, 0, 1))[C, M]">...</span>
+      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resource7Impl&quot;, &quot;signature&quot; = List(-1, -1, -1, -1, 0, 1))[C, M]">...</span>
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resourse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="resourse[C,M](sub:spray.routing.PathMatcher1[_],block:spray.routing.RequestContext=&gt;Unit):spray.routing.RequestContext=&gt;Unit"></a>
-      <a id="resourse[C,M](PathMatcher1[_],(RequestContext)⇒Unit):(RequestContext)⇒Unit"></a>
+    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resource" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resource[C,M](sub:spray.routing.PathMatcher1[_],block:spray.routing.RequestContext=&gt;Unit):spray.routing.RequestContext=&gt;Unit"></a>
+      <a id="resource[C,M](PathMatcher1[_],(RequestContext)⇒Unit):(RequestContext)⇒Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">resourse</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="sub">sub: <span class="extype" name="spray.routing.PathMatcher1">PathMatcher1</span>[_]</span>, <span name="block">block: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">resource</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="sub">sub: <span class="extype" name="spray.routing.PathMatcher1">PathMatcher1</span>[_]</span>, <span name="block">block: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Define resourse with subroute and nexted block</p><div class="fullcomment"><div class="comment cmt"><p>Define resourse with subroute and nexted block</p><pre>resourse[Controller, Model](IntNumber, {
+      <p class="shortcomment cmt">Define resource with subroute and nexted block</p><div class="fullcomment"><div class="comment cmt"><p>Define resource with subroute and nexted block</p><pre>resource[Controller, Model](IntNumber, {
 pathPrefix(<span class="lit">"/path"</span>) {
    get { complete { <span class="lit">"path"</span> } }
 }
@@ -2520,111 +2520,111 @@ pathPrefix(<span class="lit">"/path"</span>) {
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@macroImpl</span><span class="args">(<span>
       
-      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resourse6Impl&quot;, &quot;signature&quot; = List(-1, -1, -1, 0, 1))[C, M]">...</span>
+      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resource6Impl&quot;, &quot;signature&quot; = List(-1, -1, -1, 0, 1))[C, M]">...</span>
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resourse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="resourse[C,M](exclude:List[String],sub:spray.routing.PathMatcher1[_]):spray.routing.RequestContext=&gt;Unit"></a>
-      <a id="resourse[C,M](List[String],PathMatcher1[_]):(RequestContext)⇒Unit"></a>
+    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resource" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resource[C,M](exclude:List[String],sub:spray.routing.PathMatcher1[_]):spray.routing.RequestContext=&gt;Unit"></a>
+      <a id="resource[C,M](List[String],PathMatcher1[_]):(RequestContext)⇒Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">resourse</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="exclude">exclude: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="sub">sub: <span class="extype" name="spray.routing.PathMatcher1">PathMatcher1</span>[_]</span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">resource</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="exclude">exclude: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="sub">sub: <span class="extype" name="spray.routing.PathMatcher1">PathMatcher1</span>[_]</span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Define resourse with specified subroute</p><div class="fullcomment"><div class="comment cmt"><p>Define resourse with specified subroute</p><pre>resourse[Controller, Model](exclude(<span class="lit">"show"</span>), Segment)</pre></div><dl class="paramcmts block"><dt class="tparam">C</dt><dd class="cmt"><p>- Controller</p></dd><dt class="tparam">M</dt><dd class="cmt"><p>- Model</p></dd><dt class="param">exclude</dt><dd class="cmt"><p>- list of excluded methods</p></dd><dt class="param">sub</dt><dd class="cmt"><p>- part of route, which will be pass into controller method, and use for create a url</p></dd><dt>returns</dt><dd class="cmt"><p>Route
+      <p class="shortcomment cmt">Define resource with specified subroute</p><div class="fullcomment"><div class="comment cmt"><p>Define resource with specified subroute</p><pre>resource[Controller, Model](exclude(<span class="lit">"show"</span>), Segment)</pre></div><dl class="paramcmts block"><dt class="tparam">C</dt><dd class="cmt"><p>- Controller</p></dd><dt class="tparam">M</dt><dd class="cmt"><p>- Model</p></dd><dt class="param">exclude</dt><dd class="cmt"><p>- list of excluded methods</p></dd><dt class="param">sub</dt><dd class="cmt"><p>- part of route, which will be pass into controller method, and use for create a url</p></dd><dt>returns</dt><dd class="cmt"><p>Route
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@macroImpl</span><span class="args">(<span>
       
-      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resourse5Impl&quot;, &quot;signature&quot; = List(-1, -1, -1, 0, 1))[C, M]">...</span>
+      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resource5Impl&quot;, &quot;signature&quot; = List(-1, -1, -1, 0, 1))[C, M]">...</span>
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resourse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="resourse[C,M]:spray.routing.RequestContext=&gt;Unit"></a>
-      <a id="resourse[C,M]:(RequestContext)⇒Unit"></a>
+    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resource" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resource[C,M]:spray.routing.RequestContext=&gt;Unit"></a>
+      <a id="resource[C,M]:(RequestContext)⇒Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">resourse</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">resource</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Simple define routes</p><div class="fullcomment"><div class="comment cmt"><p>Simple define routes</p><pre>resourse[Controller, Model]</pre></div><dl class="paramcmts block"><dt class="tparam">C</dt><dd class="cmt"><p>- you controller</p></dd><dt class="tparam">M</dt><dd class="cmt"><p>- you model</p></dd><dt>returns</dt><dd class="cmt"><p>Route
+      <p class="shortcomment cmt">Simple define routes</p><div class="fullcomment"><div class="comment cmt"><p>Simple define routes</p><pre>resource[Controller, Model]</pre></div><dl class="paramcmts block"><dt class="tparam">C</dt><dd class="cmt"><p>- you controller</p></dd><dt class="tparam">M</dt><dd class="cmt"><p>- you model</p></dd><dt>returns</dt><dd class="cmt"><p>Route
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@macroImpl</span><span class="args">(<span>
       
-      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resourse4Impl&quot;, &quot;signature&quot; = List(-1, 0, 1))[C, M]">...</span>
+      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resource4Impl&quot;, &quot;signature&quot; = List(-1, 0, 1))[C, M]">...</span>
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resourse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="resourse[C,M](exclude:List[String],block:spray.routing.RequestContext=&gt;Unit):spray.routing.RequestContext=&gt;Unit"></a>
-      <a id="resourse[C,M](List[String],(RequestContext)⇒Unit):(RequestContext)⇒Unit"></a>
+    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resource" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resource[C,M](exclude:List[String],block:spray.routing.RequestContext=&gt;Unit):spray.routing.RequestContext=&gt;Unit"></a>
+      <a id="resource[C,M](List[String],(RequestContext)⇒Unit):(RequestContext)⇒Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">resourse</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="exclude">exclude: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="block">block: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">resource</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="exclude">exclude: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="block">block: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Define routes without excluded actions, and nested block</p><div class="fullcomment"><div class="comment cmt"><p>Define routes without excluded actions, and nested block</p><pre>resourse[Controller, Model](exclude(<span class="lit">"index"</span>), {
+      <p class="shortcomment cmt">Define routes without excluded actions, and nested block</p><div class="fullcomment"><div class="comment cmt"><p>Define routes without excluded actions, and nested block</p><pre>resource[Controller, Model](exclude(<span class="lit">"index"</span>), {
   get0[Controller](<span class="lit">"other"</span>)
 })</pre></div><dl class="paramcmts block"><dt class="tparam">C</dt><dd class="cmt"><p>- you controller</p></dd><dt class="tparam">M</dt><dd class="cmt"><p>- you model</p></dd><dt class="param">exclude</dt><dd class="cmt"><p>- excluded actions</p></dd><dt class="param">block</dt><dd class="cmt"><p>Route - nested block</p></dd><dt>returns</dt><dd class="cmt"><p>Route
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@macroImpl</span><span class="args">(<span>
       
-      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resourseImpl&quot;, &quot;signature&quot; = List(-1, -1, -1, 0, 1))[C, M]">...</span>
+      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resourceImpl&quot;, &quot;signature&quot; = List(-1, -1, -1, 0, 1))[C, M]">...</span>
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resourse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="resourse[C,M](block:spray.routing.RequestContext=&gt;Unit):spray.routing.RequestContext=&gt;Unit"></a>
-      <a id="resourse[C,M]((RequestContext)⇒Unit):(RequestContext)⇒Unit"></a>
+    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resource" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resource[C,M](block:spray.routing.RequestContext=&gt;Unit):spray.routing.RequestContext=&gt;Unit"></a>
+      <a id="resource[C,M]((RequestContext)⇒Unit):(RequestContext)⇒Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">resourse</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="block">block: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">resource</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="block">block: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Define routes with nested block</p><div class="fullcomment"><div class="comment cmt"><p>Define routes with nested block</p><pre>resourse[Controller, Model] {
+      <p class="shortcomment cmt">Define routes with nested block</p><div class="fullcomment"><div class="comment cmt"><p>Define routes with nested block</p><pre>resource[Controller, Model] {
 get0[Controller](<span class="lit">"other"</span>)
 }</pre></div><dl class="paramcmts block"><dt class="tparam">C</dt><dd class="cmt"><p>- you controller</p></dd><dt class="tparam">M</dt><dd class="cmt"><p>- you model</p></dd><dt class="param">block</dt><dd class="cmt"><p>Route - block with nested routes</p></dd><dt>returns</dt><dd class="cmt"><p>Route
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@macroImpl</span><span class="args">(<span>
       
-      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resourse1Impl&quot;, &quot;signature&quot; = List(-1, -1, 0, 1))[C, M]">...</span>
+      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resource1Impl&quot;, &quot;signature&quot; = List(-1, -1, 0, 1))[C, M]">...</span>
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resourse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="resourse[C,M](exclude:List[String]):spray.routing.RequestContext=&gt;Unit"></a>
-      <a id="resourse[C,M](List[String]):(RequestContext)⇒Unit"></a>
+    </li><li name="com.github.fntzr.spray.routing.ext.Routable#resource" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resource[C,M](exclude:List[String]):spray.routing.RequestContext=&gt;Unit"></a>
+      <a id="resource[C,M](List[String]):(RequestContext)⇒Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">resourse</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="exclude">exclude: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">resource</span><span class="tparams">[<span name="C">C</span>, <span name="M">M</span>]</span><span class="params">(<span name="exclude">exclude: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: (<span class="extype" name="spray.routing.RequestContext">RequestContext</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Define routes without excluded pathes.</p><div class="fullcomment"><div class="comment cmt"><p>Define routes without excluded pathes.</p><pre>resourse[Controller, Model](exclude(<span class="lit">"index"</span>, <span class="lit">"show"</span>, <span class="lit">"new"</span>))</pre></div><dl class="paramcmts block"><dt class="tparam">C</dt><dd class="cmt"><p>- you controller</p></dd><dt class="tparam">M</dt><dd class="cmt"><p>- you model</p></dd><dt class="param">exclude</dt><dd class="cmt"><p>- list with excluded methods (index, show, ...)</p></dd><dt>returns</dt><dd class="cmt"><p>Route
+      <p class="shortcomment cmt">Define routes without excluded pathes.</p><div class="fullcomment"><div class="comment cmt"><p>Define routes without excluded pathes.</p><pre>resource[Controller, Model](exclude(<span class="lit">"index"</span>, <span class="lit">"show"</span>, <span class="lit">"new"</span>))</pre></div><dl class="paramcmts block"><dt class="tparam">C</dt><dd class="cmt"><p>- you controller</p></dd><dt class="tparam">M</dt><dd class="cmt"><p>- you model</p></dd><dt class="param">exclude</dt><dd class="cmt"><p>- list with excluded methods (index, show, ...)</p></dd><dt>returns</dt><dd class="cmt"><p>Route
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@macroImpl</span><span class="args">(<span>
       
-      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resourse0Impl&quot;, &quot;signature&quot; = List(-1, -1, 0, 1))[C, M]">...</span>
+      <span class="defval" name="`macro`(&quot;versionFormat&quot; = 1, &quot;className&quot; = &quot;com.github.fntzr.spray.routing.ext.RoutableImpl&quot;, &quot;methodName&quot; = &quot;resource0Impl&quot;, &quot;signature&quot; = List(-1, -1, 0, 1))[C, M]">...</span>
     </span>)</span>
               
         </dd></dl></div>
