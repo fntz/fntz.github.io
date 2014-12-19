@@ -24,8 +24,7 @@ It has the following features:
 + Binding, you might bind model and view, with modify any attributes (class, id, data-*) on changes, bind view to model, view to view, and any object property to view.
 + For models available Validators, and you might easy add new own validators.
 + Html5 Routing, in browsers which not support html5 routing, all routes will be convert to hashbase routes.
-+ Log all actions in applcation.
-
++ Log all actions in application.
 + Work with any javascript library (jQuery, Prototypejs).
 
 Any way lets create a simple todo app with `Sirius`.
@@ -45,7 +44,7 @@ Need create a several parts of application:
 
 ### Before work
 
-I use last `Sirius.js` v0.6.2.1 from master branch.
+I use last `Sirius.js` v0.6.3 from master branch.
 
 Sirius.js have a some parts, which help us to create Application. Obviously for work we need define some Model, which contain model state. Models in `Sirius.js` must be extend `BaseModel`, who worked with Rails know about it. Our model should contain next attributes for correct work, firsly it's `title` where we might save user input information.
 And we need `completed` attribute for mark model as completed, and something for identify model like `primary key` it's `id` attribute. 
@@ -621,7 +620,7 @@ Renderer =
 
 In `1` we clear task list and then add tasks in html.
 
-#### small note about notes, we might rewrite `completed` and `active` actions in one route:
+#### small note about routes, we might rewrite `completed` and `active` actions in one route:
 
 ```coffee
 routes = 
