@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Rest API with Spray.IO"
-date:   2013-10-15 16:00:00
+date:   2015-01-06 19:12:00
 comments: true
 categories: scala
 tags: scala sprayio api rest
