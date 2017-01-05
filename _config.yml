@@ -1,4 +1,4 @@
 name: --r --d --f ~ 
-markdown: redcarpet
-pygments: true
+gems: [jekyll-paginate]
+markdown: kramdown
 paginate: 10
