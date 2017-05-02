@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Writing Todo App with Sirius.js"
+title:  "Todo App with Sirius.js"
 date:   2014-12-18 20:00:00
 comments: true
 categories: coffeescript
@@ -8,7 +8,7 @@ tags: coffeescript javascript mvc
 summary: "Long post about how to write Todo App with Sirius.js" 
 ---
 
-TL;DR Writing applications with `Sirius.js` is easy.
+TL;DR Write applications with `Sirius.js` is easy.
 
 + [Sirius.js](https://github.com/fntzr/sirius)
 + [Source Code](https://github.com/fntzr/sirius/blob/master/todomvc/js/app.coffee)
