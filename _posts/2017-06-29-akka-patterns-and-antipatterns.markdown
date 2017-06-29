@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Akka patterns and anti patterns"
-date:   2017-01-14 12:12:00
+date:   2017-06-29 22:37:00
 comments: true
 categories: scala
 tags: akka 
