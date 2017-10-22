@@ -80,7 +80,7 @@ agentClient.register(
 
 This is all, now if you open consul ui (`http://localhost:8500/ui/#/dc1/services/consul`) you might see
 
-[logo]: /imgs/consul-ui.png "consul-ui"
+![consul-ui](https://raw.githubusercontent.com/fntz/fntz.github.io/master/imgs/consul-ui.png)
 
 ### Service implmentation
 
@@ -126,13 +126,13 @@ consul-template -template="/path/nginx.tpl:/path/nginx.conf:nginx -s reload"
 
 our template:
 
-```
 
+```
 http {
   upstream backend {
-    {{range service "my-backend-service"}} 
-      server {{.Address}}:{{.Port}};
-    {{end}}
+    {{ range service "my-backend-service"}} 
+      server { {.Address} }:{ {.Port} };
+    { {end} }
   }
 
   server {
@@ -143,6 +143,7 @@ http {
 }
 
 ```
+
 
 In `range` block we need only `my-backend-service` and then just define `server host:port` from info about service.
 
