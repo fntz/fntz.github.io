@@ -128,6 +128,7 @@ our template:
 
 
 ```
+{% raw %}
 http {
   upstream backend {
     {{ range service "my-backend-service"}} 
@@ -141,7 +142,7 @@ http {
     }
   }
 }
-
+{% endraw %}
 ```
 
 
