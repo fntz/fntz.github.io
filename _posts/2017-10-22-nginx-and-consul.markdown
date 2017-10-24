@@ -4,6 +4,7 @@ title:  "Nginx and Consul"
 date:   2017-10-22 12:00:00
 comments: true
 categories: consul
+published: false
 tags: nginx consul consult-template akka-http 
 summary: "Control backend services with consul" 
 ---
