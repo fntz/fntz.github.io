@@ -54,18 +54,20 @@ config.foo?             # => true or false
 Then we need to add a module in the `OpenStruct`:
 
 ```ruby
-module MethodMissing
-  def method_missing(method)
+module OStructExtra
+  if method.to_s.end_with?("?")
     method = method[0...-1].to_sym 
     !!marshal_dump[method]              # cast to the bool
-  end
+  else 
+    marshal_dump[method]
+  end 
 end
 
 # and then
 
 config = OpenStruct.new( 
           # ...
-          ).extend(MethodMissing)
+          ).extend(OStructExtra)
 
 p config.foo?  #=> true
 p config.foo0? #=> false
