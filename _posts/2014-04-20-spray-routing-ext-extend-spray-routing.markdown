@@ -345,8 +345,8 @@ References
 
 + [Spray](http://spray.io/)
 + [Rails Routing](http://guides.rubyonrails.org/routing.html)
-+ [spray-routing-ext](https://github.com/fntzr/spray-routing-ext)
-+ [blog example sources](https://github.com/fntzr/spray-routing-ext/blob/master/sample/src/main/scala/example.scala)
++ [spray-routing-ext](https://github.com/fntz/spray-routing-ext)
++ [blog example sources](https://github.com/fntz/spray-routing-ext/blob/master/sample/src/main/scala/example.scala)
 + [Akka](http://akka.io/)
 + [scala macros](http://scalamacros.org/)
 

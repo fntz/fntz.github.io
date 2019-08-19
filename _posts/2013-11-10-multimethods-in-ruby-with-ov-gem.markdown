@@ -1,45 +1,48 @@
 ---
 layout: post
-title:  "Multimethods in Ruby with Ov gem"
+title:  "Multimethods in Ruby with the Ov gem"
 date:   2013-11-10 19:54:00
 categories: ruby 
 comments: true
 tags: ruby multimethods ov
-summary: "Create multimethods with Ov for comfortable work." 
+summary: "Create multimethods for convenient work." 
 ---
 
-Many programming language have the powerful feature - multimethods or method overloading, but in ruby not have this feature. However Ruby have a ability create this as library not built in feature. 
+Many programming languages have a powerful feature - multimethods or method overloading, but Ruby doesn't have that feature.
+But in the Ruby it's still possible to do it, but as extra code. 
 
-With `Ov` ruby gem ruby have ability of usage multimethods.   
+`Ov` the special gem to do multimethods.  
 
-Base Usage
+Basic Usage
 ------------
 
 ```ruby
+require 'ov'
+
 class MyClass
-  include Ov #only include and use
+  include Ov                       # add and use
   
-  let :test, String {|str| 
-    p "string given"
-  }  
-  let :test, Array {|arr|
-    p "array given"
-  }
+  let :test, String  do |str| 
+    p "string is received"
+  end   
+
+  let :test, Array do |arr|
+    p "array is recevied"
+  end
 end
 
 my_class = MyClass.new
 
-my_class.test("sttring") #=> "string given" 
-my_class.test([]) #=> "array given"
+my_class.test("string") #=> "string is received" 
+my_class.test([])       #=> "array is recevied"
 ```
 
-Ability to create constructors:
+And, of course, we can create constructors:
 
 ```ruby
 class MyArray 
   include Ov
   attr_accessor :arr
-  
 
   let :initialize do
     @arr = []
@@ -55,17 +58,21 @@ class MyArray
  
 end
 
-p MyArray.new() #=> #<MyArray:0x9d39290 @arr=[]>
-p MyArray.new(3) #=> #<MyArray:0x9d3904c @arr=[nil, nil, nil]>
-p MyArray.new(3, true) #=> #<MyArray:0x9d38e08 @arr=[true, true, true]>
+p MyArray.new()             #=> #<MyArray:0x9d39290 @arr=[]>
+p MyArray.new(3)            #=> #<MyArray:0x9d3904c @arr=[nil, nil, nil]>
+p MyArray.new(3, true)      #=> #<MyArray:0x9d38e08 @arr=[true, true, true]>
 ``` 
 
-More Usage
+
+
+Moar
 -------------
 
-Create own `case-match` which work with types.
+Create your own [pattern-matching](https://en.wikipedia.org/wiki/Pattern_matching).
 
 ```ruby
+# magic 
+
 module Matching
   def match(*args, &block)
     z = Module.new do 
@@ -88,36 +95,39 @@ module Matching
 end
 ```
 
-We create a module with `match` method, which take a `*args` it's arguments which will be pass into block. And in `match` method, define anonymous module with 2 methods:
-`try` - it's the same as and `when`,
+We create a module with the `match` method, that takes several `*args` 
+ these arguments will be passed to the block. 
+And in this `match` method, we defined an anonymous module with two methods:
+`try` - it's the same as `when`,
 `otherwise` - it's `else'.
-When `*args` do not match with types in `try` then will be call `otherwise`.
+When the `*args` do not match with the types in `try` then call `otherwise`.
 Example:
 
 ```ruby
-include Matching #include in Main
+include Matching # I'm using it in the Main
 
 match("String", [123]) do 
   try(String, Array) {|str, arr| p "#{str} #{arr}" }
   try(String) {|str| p "#{str}"  }
   otherwise { p "none" }
-end #=> "String [123]"
+end 
+
+# => "String [123]"
 ```
 
-Other Example: Get resource:
+Another example: get resource:
 
 ```ruby
 require "net/http"
 
-match(Net::HTTP.get_response(URI("http://google.com"))) do
+match(Net::HTTP.get_response(URI("https://httpbin.org/status/200"))) do
   try(Net::HTTPOK) {|r| p r.header }
   try(Net::HTTPMovedPermanently) {|r| p r.header }
   otherwise { p "error" }
 end
 ```
 
-Depending on the result call different blocks.
-
+Depending on the results, different blocks will be executed.
 
 References
 ------------
@@ -125,5 +135,5 @@ References
 + [Multiple dispatch](http://en.wikipedia.org/wiki/Multiple_dispatch)
 + [Function_overloading](http://en.wikipedia.org/wiki/Function_overloading)
 + [Polymorphism](http://en.wikipedia.org/wiki/Polymorphism_(computer_science))
-+ [Ov gem](https://github.com/fntzr/ov)
++ [Ov gem](https://github.com/fntz/ov)
 

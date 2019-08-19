@@ -10,8 +10,8 @@ summary: "Long post about how to write Todo App with Sirius.js"
 
 TL;DR Write applications with `Sirius.js` is easy.
 
-+ [Sirius.js](https://github.com/fntzr/sirius)
-+ [Source Code](https://github.com/fntzr/sirius/blob/master/todomvc/js/app.coffee)
++ [Sirius.js](https://github.com/fntz/sirius)
++ [Source Code](https://github.com/fntz/sirius/blob/master/todomvc/js/app.coffee)
 + [TodoApp Site](http://todomvc.com/)
 
 
@@ -653,6 +653,6 @@ That is all.
 References
 --------------------
 
-+ [Sirius.js](https://github.com/fntzr/sirius)
-+ [Source Code](https://github.com/fntzr/sirius/blob/master/todomvc/js/app.coffee)
++ [Sirius.js](https://github.com/fntz/sirius)
++ [Source Code](https://github.com/fntz/sirius/blob/master/todomvc/js/app.coffee)
 + [TodoApp Site](http://todomvc.com/)

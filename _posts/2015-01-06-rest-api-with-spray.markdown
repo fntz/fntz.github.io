@@ -64,7 +64,7 @@ class RestApiService extends Actor with RestRoute {
 `route` - this our routes, let's see on `RestRoute` trait:
 
 ```scala
-import com.github.fntzr.spray.routing.ext.Routable
+import com.github.fntz.spray.routing.ext.Routable
 
 trait RestRoute extends Routable {
   val route =
@@ -226,10 +226,10 @@ As you can see create a spray Rest Api simple, and spray have a many features fo
 References
 ------------
 
-+ [Source Code](https://gist.github.com/fntzr/4554bafb9b3cb4ed034c)
++ [Source Code](https://gist.github.com/fntz/4554bafb9b3cb4ed034c)
 + [Spray.IO](http://spray.io/)
 + [Akka](http://akka.io/)
-+ [spray-routing-ext](https://github.com/fntzr/spray-routing-ext)
++ [spray-routing-ext](https://github.com/fntz/spray-routing-ext)
 + [Composing Directives](http://spray.io/documentation/1.1-SNAPSHOT/spray-routing/key-concepts/directives/#composing-directives)
 + [Custom directives](http://spray.io/documentation/1.1-SNAPSHOT/spray-routing/advanced-topics/custom-directives/)
 + [Spray Directives: Creating Your Own, Simple Directive](http://blog.michaelhamrah.com/2014/05/spray-directives-creating-your-own-simple-directive/)

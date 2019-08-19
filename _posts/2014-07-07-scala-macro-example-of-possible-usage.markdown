@@ -145,7 +145,7 @@ Some examples of usage:
   @wrap def k = 1 // Error!
 ```
 
-The same technique i use for create `respondTo` method for [spray-routing-ext](https://github.com/fntzr/spray-routing-ext/issues/7)
+The same technique i use for create `respondTo` method for [spray-routing-ext](https://github.com/fntz/spray-routing-ext/issues/7)
 
 References
 ------------
@@ -153,6 +153,6 @@ References
 + [Annotations](http://docs.scala-lang.org/overviews/macros/annotations.html)
 + [Quasiquotes Syntax](http://docs.scala-lang.org/overviews/quasiquotes/syntax-summary.html)
 + [Macros](http://docs.scala-lang.org/overviews/macros/usecases.html)
-+ [Source code](https://gist.github.com/fntzr/9350393a786385733e8a)
++ [Source code](https://gist.github.com/fntz/9350393a786385733e8a)
 
 
