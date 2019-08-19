@@ -18,9 +18,9 @@ module Jekyll
 
     def paginate(site, posts)
       type = "tags"
-      pages = Pager.calculate_pages(posts[1], site.config['paginate'].to_i)
+      pages = Jekyll::Paginate::Pager.calculate_pages(posts[1], site.config['paginate'].to_i)
       (1..pages).each do |num_page|
-        pager = Pager.new(site, num_page, posts[1], pages)
+        pager = Jekyll::Paginate::Pager.new(site, num_page, posts[1], pages)
         path = "/#{type}/#{posts[0]}"
         if num_page > 1
           path = path + "/page#{num_page}"
