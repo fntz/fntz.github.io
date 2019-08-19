@@ -1,25 +1,23 @@
 ---
 layout: post
-title:  "OpenStruct for Config files"
+title:  "OpenStruct for configuration files"
 date:   2013-10-15 16:00:00
 comments: true
 categories: ruby
 tags: ruby openstruct config snippet
-summary: "Usage `OpenStruct` class for mapping config files." 
+summary: "How to use `OpenStruct` class to mapping config files." 
 ---
 
 
-Simple config files like this:
+Simple configuration files usually looks like:
 
 ```text
 foo:bar
 zed:set
 baz:foo1
-
-
 ```
 
-conveniently placed in `OpenStruct` class, which that seems designed for such thinsgs.
+It all placed comfortably into `OpenStruct`, that are made for this kind of thing.
 
 
 Implementation
@@ -29,41 +27,41 @@ Implementation
 require "ostruct"
 
 config = OpenStruct.new(
-           File.read("config.conf")  #read file
+           File.read("config.conf")                           # read the file
             .each_line 
-              .map(&:strip)          #strip string
-                .reject(&:empty?)    #remove empty lines
-                  .map(&->(str){str.split(":") }) #split lines
+              .map(&:strip)                                   
+                .reject(&:empty?)                             # remove the empty lines
+                  .map(&->(str){str.split(":") })             # split the lines
                     .reduce(Hash.new){ |hash, arr|  
-                      hash.merge!({arr.first => arr.last}) #place in hash
+                      hash.merge!({arr.first => arr.last})    # place into hash
                     }
           )
-
+# voila
 p config #=> #<OpenStruct foo="bar", zed="set", baz="foo1">
 ```
 
-Simple.
+Simple and easy.
 
-Some Magic
+Extra
 ------------
 
-When you have that method defined, for example:
+When we want to make sure that the method is really defined, for example:
 
 ```ruby
-config.foo? # => true or false
+config.foo?             # => true or false
 ```
 
-Then you need to add a module in `OpenStruct`:
+Then we need to add a module in the `OpenStruct`:
 
 ```ruby
 module MethodMissing
   def method_missing(method)
     method = method[0...-1].to_sym 
-    !!marshal_dump[method] #cast to bool
+    !!marshal_dump[method]              # cast to the bool
   end
 end
 
-#and 
+# and then
 
 config = OpenStruct.new( 
           # ...
