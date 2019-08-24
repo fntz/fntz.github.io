@@ -5,20 +5,26 @@ date:   2014-04-20 15:00:00
 categories: scala 
 comments: true
 tags: scala spray spray-routing rails-routing
-summary: "spray-routing-ext package for create rails like routes in spray" 
+summary: "spray-routing-ext package to create rails like routes in spray framework" 
 ---
 
 1. Intro
 --------
 
-spray is a toolkit for create http application top on akka. It's an actor-based, lightweight, modular framework. Spray contains several modules. 
-And it include a `spray-routing` for create dsl for building RESTfil web servises. 
+Spray is a toolkit to create http applications top on akka. It's an actor-based, lightweight, 
+modular framework. Spray contains several modules. 
+And spray include a `spray-routing` to create dsl to building RESTful web services. 
 
-it was very interesting.
+It is interesting.
 
-It a full dsl, you might create a high-level routes. But it's very verbose. When we create a MVC application, we have a controller, which a take request and transform it into response. If we have a verbose dsl, we might confused, when change a small part, or forget something. 
+It is a full dsl, you able to create a high-level routes. 
+But it's so verbose. 
+When we create a MVC application, we have a controller, that take request and 
+transform it into response. 
+If we have verbose dsl, we might be confused, when change a small part, or forget something. 
 
-I worked with rails web framework, it contain a small dsl for routes. Where you have a few primitives: http-method and Controller#action part, and dsl methods. 
+I worked with Rails, that contains a small dsl for routes. 
+Where you have a few primitives: http-method and Controller#action part, and dsl methods. 
 
 For example:
 
@@ -50,25 +56,26 @@ in rails the same:
 
 Spray dsl more verbose.
 
-And so, i have a specification, spray route dsl and scala macro system:
+So, I have a specification, spray route dsl and scala macro system:
 `spray dsl + scala-macro = rails-like routes` :)
 
 2. Basic
 ---------
 
-`spray-routing-ext` have a few http methods for wrapping `plain http-method` and combine it with controller method call.
+`spray-routing-ext` have a few http methods for wrapping `plain http-method` and 
+combine it with controller method call.
 
 ```scala
-  get0[YouController](("foo" / IntNumber) ~> "foo")
-```  
+  get0[YourController](("foo" / IntNumber) ~> "foo")
+```
 
-in `YouController` you have a `foo` method:
+in `YourController` you have a `foo` method:
 
 ```scala
 def foo(param: Int) = { ... }
 ```
 
-For wrap something routes into one part use `scope`:
+For wrap routes into one part I made `scope`:
 
 ```scala
   scope("part") {
@@ -76,28 +83,33 @@ For wrap something routes into one part use `scope`:
   }
 ```
 
-If you want a call controller method for several http-methods, use `match0`:
+If you want to call controller method for several http-methods, use `match0`:
 
 ```scala
-  match0[YouController]("baz", List(GET, PUT))
+  match0[YourController]("baz", List(GET, PUT))
 ```
 
-And now, `#baz` can call for `get` and `put` http methods.
+Now, a `#baz` can call for `get` and `put` http methods.
 
-When we create a web servises, we should return something information, it's a posts, comments, or something like this. It a database Model. For work with `controller`s and `model`s we can use `resource`. 
+When we create a web services, we should return information, 
+It's posts, comments, or something like this. 
+It a database Model. For work with `controller`s and `model`s we can use `resource`. 
 
 ```scala
-resource[YouCotnroller, Model](exclude("index"))
+resource[YourController, Model](exclude("index"))
 ```
 
-And now, all requests with `/model/` will be redirected for `YouController` methods: `index`, `show`, `delete`, `update`, `create`, `edit` and `fresh`.
+And now, all requests with `/model/` will be redirected to `YourController` methods: 
+`index`, `show`, `delete`, `update`, `create`, `edit` and `fresh`.
 
-Controllers it only trait which extend `BaseController`. `BaseController` a trait with one field - `request` whitch contain current request.
+Controllers is only trait that extend a `BaseController`. 
+The `BaseController` is a trait with one field - `request` that contains current request.
 
-With `spray-routing-ext` we divide dsl for routing: `get0`, `match0`, `root`. For controllers we use a `spray-routing` dsl for return response:
+With `spray-routing-ext` we divide dsl for routing: `get0`, `match0`, `root`. 
+For controllers we should use a `spray-routing` dsl to return response:
 
 ```scala
-  //in you controller:
+  //in your controller:
   def method(id: Int) = {
     //manipulation with id
     respondWithMediaType(`text/html`) {
@@ -110,7 +122,9 @@ With `spray-routing-ext` we divide dsl for routing: `get0`, `match0`, `root`. Fo
 
 Also in controller you have access `request` - current request.
 
-But if our controllers it only traits, how me pass into trait db connection, or other resources, variables. I create the next solution:
+But if our controllers is only traits, 
+how me pass into trait db connection, or other resources, variables? 
+I create the next solution:
 
 
 ```scala
@@ -120,7 +134,7 @@ object Main extends App {
   implicit val system = ActorSystem("system")
   val db = //connect with db
   val otherVal = 
-  //i pass into actor contructor all values, which need for work
+  //I will pass into actor contructor all values, which need for work
   val service = system.actorOf(Props(classOf[MyActor], db, otherVal), "my-service")
   IO(Http) ! Http.Bind(service, "localhost", port = 8080)
 }
@@ -147,12 +161,12 @@ trait MyInj {
 //controller with injection
 trait Controller extends BaseController with MyInj {
   def foo = {
-    //i can use `db` or `myVal` + `request`
+    //I can use `db` or `myVal` + `request`
   }
 }
 ```
 
-Underhood it:
+Underhood is:
 
 ```scala
   //sum is a `request` + outer method params.
@@ -179,7 +193,8 @@ case class Post(id: Int, title: String, description: String)
 ```
 As you can see it's just `id\title\description` fields.
 
-Define main system, which create a db connection and actor service, which transform requests into response:
+Define main system, where I create a db connection and an actor service, 
+that transform requests into response:
 
 ```scala
 object Blog extends App {
@@ -190,7 +205,7 @@ object Blog extends App {
 }
 ```
 
-Instead of `database` i use a simple actor with `HashMap`, which contain all my posts. 
+Instead of `database` I use a simple actor with `HashMap`, which contain all posts. 
 
 ```scala
 class DBActor extends Actor {
@@ -224,7 +239,9 @@ class DBActor extends Actor {
 
 ```
 
-My db satisfies all specifications: return all posts, or one post, and delete, update and create post. For communication with `db` i define messages:
+My db satisfies all criteria: 
+return all posts, or one post, and delete, update and create post. 
+For communication with `db` I define messages:
 
 ```scala
 object Messages {
@@ -238,7 +255,8 @@ object Messages {
 
 And now we create `M` from `MVC`.
 
-For `Vies`, i define trait which contatin a method for view information in my browser, a small part: 
+For `Vies`, I define trait that contains a method 
+for view information in my browser, a small part: 
 
 ```scala
 trait HtmlView {
@@ -262,9 +280,10 @@ trait HtmlView {
 }
 ```
 
-`HtmlView` contain methods for all actions, which we use into controller.
+`HtmlView` contains methods for all actions, that we use into controller.
 
-And so, i have a database and a view. And i should extends my controller with this values, which contain `db` and `view`:
+I have a database and a view. 
+And I should extend my controller with these values, that contains a `db` and a `view`:
 
 ```scala
 trait DBInj {
@@ -306,12 +325,12 @@ trait PostController extends BaseController with DBInj with HtmlViewInj {
 
 ```
 
-In controller, i can use `db` for db connection and `render` for return response.
+In controller, I can use the `db` for db connection and `render` for return response.
 
-And now my route servise:
+And now my route service:
 
 ```scala
-//db: is a database connection, do you remember?
+//db is a database connection, do you remember?
 class ServiceActor(db: ActorRef) extends Actor with ApplicationRouteService {
   def actorRefFactory = context
   //pass in runRoute db connection and HtmlView instance which map into `render` value
@@ -335,7 +354,9 @@ trait ApplicationRouteService extends Routable {
 }
 ```
 
-Now, i exclude `create` method and define himself, because in form, i not use a `id` field. And i define that `/` is a redirect in `index` method from `PostController`.
+I excluded a `create` method and define himself, 
+because in a form, I do not use an `id` field. 
+And I defined `/` is a redirect to `index` method from `PostController`.
 
 That's all. I created a blog in five minutes.
 
