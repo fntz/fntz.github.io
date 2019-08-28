@@ -1,24 +1,26 @@
 ---
 layout: post
-title:  "Scala Macro: Example of possible usage"
+title:  "Scala Macro: Codegeneration"
 date:   2014-07-07 16:46:00
 categories: scala 
 comments: true
 tags: scala scalamacro 
-summary: "Example of generate wrap for case branches" 
+summary: "How to generate wrapper for case branches" 
 ---
 
-1. Intro
+1 Intro
 --------
 
-Scala Macro system provides an ability for generate code - for example create a top level objects, generate new classes, or replace user code with a new generated code. 
+Scala Macro system provides an ability for generate code - 
+for example create a top level objects, 
+generate new classes, or replace user code with a new generated code. 
 
 Consider an ability for replace user code.
 
 2 Program
 -----------
 
-Sometimes i need a wrap case branches into repeating function. Far-fetched example:
+I need to wrap case branches into repeating function. Far-fetched example:
 
 ```scala
 def myMethod(num: Int): Option[String] = num match {
@@ -33,16 +35,18 @@ def myMethod(num: Int): Option[String] = num match {
 }
 ```
 
-Here, all result values i wrap into `Some`, but it might be a other function or object.
+Here, all result values I wrap into `Some`, but it might be a other function/object.
 
-With scala macro i can wrap all results into `Some` into compile time. Also i can a return `None` without definition, it will be by default.
+I can wrap all results into `Some` into compile time with scala macro. 
+Also, I can a return `None` without definition, it will be by default.
 
-3. Implementation
+3 Implementation
 -------------------
 
-I will use a annotation (`@wrap`) for marking the code. Annotation will be to work only for `val` or `def`. 
+I will use an annotation (`@wrap`) for mark such a code. 
+Annotation will be work only for `val` or `def`. 
 
-For start, import all necessary packages for work with macros and annotations.
+First of all, import all necessary packages for work with macros and annotations:
 
 ```scala
 import scala.reflect.macros.whitebox.Context 
@@ -50,7 +54,7 @@ import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 ```
 
-After define a class annotation, as
+Then let's define a class annotation:
 
 ```scala 
 class wrap extends StaticAnnotation {
@@ -58,8 +62,10 @@ class wrap extends StaticAnnotation {
 }
 ```  
 
-Here, i created class with name a `wrap`, which will be using as annotation. 
-For transformation code, need define method `macroTransform`. It method used for transform code after annotation to macro method:
+Here, I created a class with a name `wrap`, that will be using as annotation. 
+For transformation of the code, 
+I need to define method `macroTransform`. 
+This method will be used to transform code after annotation to macro method:
 
 ```scala
 @someAnnotation def method = ...
@@ -107,23 +113,33 @@ object wrapImpl {
 }
 ```
 
-In this method, we got a list with any code, but this code must contain a `match`. This might be a method or value definition. But for our need only a `match` definition: `case q"$expr match { case ..$cases }"` with quasiquotes we extract this pattern match definition, and use it for our purposes.
+In the method, we got a list with any code, 
+but this code should contains a `match`-construction. 
+This should be method or value definition. 
+But for our need only a `match` definition: 
+`case q"$expr match { case ..$cases }"` 
+where we should fetch pattern match definition with quasiquotes help.
 
-Firstly, collect on `cases` and extract all branches without wildcard, and wrap each into `Some`. 
+Firstly, collect on `cases` and 
+fetch all branches without wildcard, and wrap each into `Some`. 
 
-Secondly, get branch with wildcard (`_`) or define own, which return `None`.
+Secondly, a branch with wildcard (`_`) or we should define own, that return `None`.
 
-And end, return a new expression definition `q"$expr match { case ..$sumCases }"`.
+In the end, we will return a new expression `q"$expr match { case ..$sumCases }"`.
 
-This return a list with cases, but when list is empty, need a throw error, because need a `match` statement.
+This will return a list with cases, 
+but when a list is empty, I should throw an error, because I need a `match`-statement.
 
-As result, we replaced user code, with own, which contain a new expression definition with wrap all branches into specific function, in our example it's `Some`.
+As result, 
+I replaced user code, 
+with own, that contains a new expression and wrap all branches 
+into specific function (`Option`-based).
 
 
-4. Usage  
+4 Usage  
 -----------
 
-Some examples of usage:
+A few examples of usage:
 
 ```scala
 
@@ -145,7 +161,7 @@ Some examples of usage:
   @wrap def k = 1 // Error!
 ```
 
-The same technique i use for create `respondTo` method for [spray-routing-ext](https://github.com/fntz/spray-routing-ext/issues/7)
+I use the same technique for create `respondTo` method in the [spray-routing-ext](https://github.com/fntz/spray-routing-ext/issues/7).
 
 References
 ------------
