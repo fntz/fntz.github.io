@@ -5,10 +5,11 @@ date:   2017-01-05 23:25:00
 comments: true
 categories: scala
 tags: thrift finagle 
-summary: "My slides from knowledge sharing" 
+summary: "My slides from the knowledge sharing lecture" 
 ---
 
-My slides from knowledge sharing session, i tell about Apache Thrift Framework, and about Finagle. 
+My slides from the knowledge sharing lecture. 
+I told about Apache Thrift Framework, and about Finagle. 
 
 Summary about Thrift: 
 
@@ -29,9 +30,9 @@ Summary about Finagle:
 
 1. Built over many protocols: Thrift, Http, Mysql, Memcache...
 
-2. Service this Function which Return Future
+2. Service it's a Function that will Return `Future`
 
-3. Future - result of async operation 
+3. `Future` it's a result of any async operation 
 
 4. Service - just a function 
 
@@ -41,7 +42,7 @@ Summary about Finagle:
 
 7. You can apply the same Filter for Client and for Server 
 
-8. Compose Filters (because it's Function)
+8. Compose Filters (because it's a Function)
 
 9. Enjoy
 
