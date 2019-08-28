@@ -102,7 +102,7 @@ actor thread: 617, state=3   !!! oops
 future thread: 616, state=3  !!! oops
 ```
 
-As you can see, 2 different threads see the same `state = 3`, this is race condition.
+As you can see, 2 different threads see the same `state = 3`, there is race condition.
 
 
 ### Long initialization
@@ -113,7 +113,7 @@ This is one from akka base pattens, a few rules for this patten:
 
 2. initialize what you need in `preStart` block
  
-3. use `stash` and `become` while the actor is not initialized
+3. use `stash` and `become` while an actor is not initialized
 
 Implementations: 
 
@@ -162,20 +162,23 @@ class MyActor {
 
 ```
 
-1. As you can see, i initialize `MyClass` inside `Future`, in `preStart` method. 
-Result of this operation i pass via `pipe` to `uninitialized` block.
+1. As you can see, I initialize `MyClass` inside `Future`, in `preStart` method. 
+Result of an operation I will pass with `pipe` to `uninitialized` block.
 
-2. `uninitialized` block, which in case of `MyClass` change state of `deps` `var`iable
+2. `uninitialized` block, that in case of `MyClass` change state of `deps` `var`iable
 
-3. when `deps` is changed, i change state of actor via `become` block, and resend all messages via `unstashAll` in normal state (`initialized` block) 
+3. when `deps` is changed, I will change state of actor via `become` block, 
+and I will resend all messages with `unstashAll` to normal state (`initialized` block) 
  
-4. `stash`, which save all messages while the actor unitialized
+4. `stash`, that save all messages while the actor is unitialized
 
 5. normal state of actor
 
 6. start actor in `uninitialized` state
 
-This is pattern you should use, when you actor is gateway between actor system and between another world: db connection, cache initialization, or network connection.
+This is pattern you should use, when you actor is gateway between 
+actor system and between another world: 
+db connection, cache initialization, or network connection.
 
 
 
@@ -196,7 +199,7 @@ This is pattern you should use, when you actor is gateway between actor system a
 
 1. what about supervisor strategy for ask? (how to retry (yep, i know how to create `retry` block :) ))
 
-2. broken actor model via `?` (communication only with messages fire and forgot)
+2. broken actor model with `?` (communication only with messages fire and forgot)
 
 3. timeout hell, how to manage timeout in application? 
 
@@ -281,7 +284,8 @@ def receive = {
 
 #### done
 
-As a result, we have a one actor (`PicturesActor`) with failure zone: all throubles in `GetUserPicturesActor` will be handled in `supervisorStrategy` block, and we create one actor for each request, it's normal for actor based application.
+As a result, we have an one actor (`PicturesActor`) with failure zone: all throubles in `GetUserPicturesActor` will be handled by `supervisorStrategy` block, 
+and we create one actor for each request, it's normal for actor based application.
 
 
 ### Retry 
@@ -410,7 +414,7 @@ def receive = {
 
 ```
 
-Instead of `withCircuitBreaker` i do manually handle the state of circuit breaker  
+Instead of `withCircuitBreaker` I handle the state of circuit breaker manually  
 
 
 
@@ -449,7 +453,7 @@ def receive {
 
 ```
 
-For solution i use the next solution:
+For solution I use the next sample:
 
 ```scala
 
@@ -503,7 +507,7 @@ class A(r1: Result1, r2: Result2) extends Actor {
 }
 ```
 
-Of course it's not a best solution, but sometimes it's enough
+Of course it's not the best solution, but sometimes it's enough
 
 
 # References
